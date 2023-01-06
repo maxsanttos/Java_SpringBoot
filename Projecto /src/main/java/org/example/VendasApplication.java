@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class VendasApplication {
+    
     @Value("${application.name}")
     private String aplicationName;
+
     @GetMapping("/hello")
     public String hellorWorld(){
         return aplicationName;
