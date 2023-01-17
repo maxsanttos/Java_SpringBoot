@@ -32,7 +32,7 @@ public class VendasApplication {
             todosClientes = clientes.obterTodos();
             todosClientes.forEach(System.out::println);
 
-            /*System.out.println("Buscando clientes");
+            System.out.println("Buscando clientes");
             clientes.buscarPorNome("Sim").forEach(System.out::println);
 
             System.out.println("Deletando Clientes");
@@ -44,7 +44,7 @@ public class VendasApplication {
                 System.out.println("Nenhum cliente encontrado!");
             }else {
                 todosClientes.forEach(System.out::println);
-            }*/
+            }
 
         };
     }
