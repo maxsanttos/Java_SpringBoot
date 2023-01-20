@@ -17,12 +17,11 @@ public class VendasApplication {
     public CommandLineRunner init(@Autowired Clientes clientes){
         return args -> {
             System.out.println("Salvando clientes");
-            clientes.save(new Cliente("Max Suel"));
-            clientes.save(new Cliente("Simone"));
+            clientes.save(new Cliente("Fulano"));
+            clientes.save(new Cliente("Outro Cliente"));
 
-            //List<Cliente> todosClientes = clientes.findAll();
-            boolean existe = clientes.encontraPorNome("Max Suel");
-            System.out.println("existe um cliente com o nome Max Suel "+ existe);
+            List<Cliente> result = clientes.encontrarPorNome("Dougllas");
+            result.forEach(System.out::println);
         };
     }
     public static void main(String[] args) {
