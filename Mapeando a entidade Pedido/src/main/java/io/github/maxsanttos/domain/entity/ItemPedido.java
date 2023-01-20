@@ -19,7 +19,7 @@ public class ItemPedido {
     @JoinColumn(name = "produto_id")
     private Produto produto;
 
-    @Column(name = "quantidade")
+    @Column
     private Integer quantidade;
 
     public Integer getId() {
