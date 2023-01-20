@@ -1,4 +1,4 @@
-package io.github.maxsanttos.domain.repositorio;
+package io.github.maxsanttos.domain.repository;
 
 import io.github.maxsanttos.domain.entity.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
