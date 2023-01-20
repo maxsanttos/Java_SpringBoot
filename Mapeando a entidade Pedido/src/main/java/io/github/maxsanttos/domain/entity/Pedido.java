@@ -3,6 +3,7 @@ package io.github.maxsanttos.domain.entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "pedido")
@@ -23,6 +24,18 @@ public class Pedido {
 
     @Column(name = "total",length = 20,precision = 2)
     private BigDecimal valorTotal;
+
+    @OneToMany(mappedBy = "pedido")
+    private List<ItemPedido> itemPedidos;
+
+
+    public List<ItemPedido> getItemPedidos() {
+        return itemPedidos;
+    }
+
+    public void setItemPedidos(List<ItemPedido> itemPedidos) {
+        this.itemPedidos = itemPedidos;
+    }
 
     public Integer getId() {
         return id;
