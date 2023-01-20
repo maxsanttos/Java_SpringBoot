@@ -14,12 +14,14 @@ public class Pedido {
     private Integer id;
 
     @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    @Column(name = "")
+
+    @Column(name = "data_pedido")
     private LocalDate dataPedido;
 
-    @Column(name = "")
+    @Column(name = "total",length = 20,precision = 2)
     private BigDecimal valorTotal;
 
     public Integer getId() {
