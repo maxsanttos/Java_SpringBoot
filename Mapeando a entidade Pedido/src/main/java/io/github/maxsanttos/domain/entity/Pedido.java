@@ -68,4 +68,15 @@ public class Pedido {
     public void setValorTotal(BigDecimal valorTotal) {
         this.valorTotal = valorTotal;
     }
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "id= " + id +
+                ", cliente= " + cliente +
+                ", dataPedido= " + dataPedido +
+                ", valorTotal= " + valorTotal +
+                ", itemPedidos= " + itemPedidos +
+                '}';
+    }
 }

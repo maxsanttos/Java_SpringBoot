@@ -21,8 +21,6 @@ public class VendasApplication {
     public CommandLineRunner init(@Autowired Clientes clientes, @Autowired Pedidos pedidos){
         return args -> {
             System.out.println("Salvando clientes");
-            //clientes.save(new Cliente("Simone"));
-            //clientes.save(new Cliente("Max Suel"));
             Cliente fulano = new Cliente("Fulano");
 
             Pedido p = new Pedido();
@@ -30,8 +28,11 @@ public class VendasApplication {
             p.setDataPedido(LocalDate.now());
             p.setValorTotal(BigDecimal.valueOf(100));
 
-            List<Cliente> result = clientes.encontrarPorNome("Max Suel");
-            result.forEach(System.out::println);
+            pedidos.save(p);
+
+            Cliente cliente = clientes.findClienteFetchPedidos(fulano.getId());
+            System.out.println(cliente);
+            System.out.println(cliente.getPedidos());
         };
     }
     public static void main(String[] args) {
