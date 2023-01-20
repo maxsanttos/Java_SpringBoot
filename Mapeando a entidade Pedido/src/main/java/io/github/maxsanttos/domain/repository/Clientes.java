@@ -15,14 +15,13 @@ public interface Clientes extends JpaRepository<Cliente,Integer>{
     List<Cliente> encontrarPorNome( @Param("nome") String nome );
 
     @Query(" delete from Cliente c where c.nome =:nome ")
-    // se for fazer um update ou delete é obrigatorio modifying
     @Modifying
     void deleteByNome(String nome);
 
     boolean existsByNome(String nome);
 
-    @Query(" select c from Cliente c left join fetch c.pedidos where c.id =:id ")
-    Cliente findClienteFetchPedidos(@Param("id") Integer id);
+    @Query(" select c from Cliente c left join fetch c.pedidos where c.id = :id  ")
+    Cliente findClienteFetchPedidos( @Param("id") Integer id );
 
 
 }

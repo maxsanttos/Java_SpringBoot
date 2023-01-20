@@ -18,10 +18,12 @@ import java.util.List;
 public class VendasApplication {
 
     @Bean
-    public CommandLineRunner init(@Autowired Clientes clientes, @Autowired Pedidos pedidos){
+    public CommandLineRunner init(@Autowired Clientes clientes,
+                                  @Autowired Pedidos pedidos){
         return args -> {
             System.out.println("Salvando clientes");
             Cliente fulano = new Cliente("Fulano");
+            clientes.save(fulano);
 
             Pedido p = new Pedido();
             p.setCliente(fulano);
@@ -30,9 +32,11 @@ public class VendasApplication {
 
             pedidos.save(p);
 
-            Cliente cliente = clientes.findClienteFetchPedidos(fulano.getId());
-            System.out.println(cliente);
-            System.out.println(cliente.getPedidos());
+            //Cliente cliente = clientes.findClienteFetchPedidos(fulano.getId());
+            //System.out.println(cliente);
+            //System.out.println(cliente.getPedidos());
+
+            pedidos.findByCliente(fulano).forEach(System.out::println);
         };
     }
     public static void main(String[] args) {
