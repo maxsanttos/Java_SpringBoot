@@ -4,10 +4,10 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "cliente")
+@Table( name = "cliente" )
 public class Cliente {
 
-    @Id //É OBRIGATORIO TER EM UMA ANNOTATION ENTITY
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;

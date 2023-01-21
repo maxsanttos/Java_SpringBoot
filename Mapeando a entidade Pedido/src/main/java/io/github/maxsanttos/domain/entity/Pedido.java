@@ -18,23 +18,21 @@ public class Pedido {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-
     @Column(name = "data_pedido")
     private LocalDate dataPedido;
 
-    @Column(name = "total",length = 20,precision = 2)
-    private BigDecimal valorTotal;
+    @Column(name = "total", precision = 20, scale = 2)
+    private BigDecimal total;
 
     @OneToMany(mappedBy = "pedido")
-    private List<ItemPedido> itemPedidos;
+    private List<ItemPedido> itens;
 
-
-    public List<ItemPedido> getItemPedidos() {
-        return itemPedidos;
+    public List<ItemPedido> getItens() {
+        return itens;
     }
 
-    public void setItemPedidos(List<ItemPedido> itemPedidos) {
-        this.itemPedidos = itemPedidos;
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
     }
 
     public Integer getId() {
@@ -61,22 +59,20 @@ public class Pedido {
         this.dataPedido = dataPedido;
     }
 
-    public BigDecimal getValorTotal() {
-        return valorTotal;
+    public BigDecimal getTotal() {
+        return total;
     }
 
-    public void setValorTotal(BigDecimal valorTotal) {
-        this.valorTotal = valorTotal;
+    public void setTotal(BigDecimal total) {
+        this.total = total;
     }
 
     @Override
     public String toString() {
         return "Pedido{" +
-                "id= " + id +
-                ", cliente= " + cliente +
-                ", dataPedido= " + dataPedido +
-                ", valorTotal= " + valorTotal +
-                ", itemPedidos= " + itemPedidos +
+                "id=" + id +
+                ", dataPedido=" + dataPedido +
+                ", total=" + total +
                 '}';
     }
 }
