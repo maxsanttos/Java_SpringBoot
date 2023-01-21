@@ -10,17 +10,17 @@ Se você estiver procurando informações sobre uma versão específica ou instr
 
 ## Recursos
 
-Crie aplicativos Spring independentes
+* Crie aplicativos Spring independentes
 
-Incorpore Tomcat, Jetty ou Undertow diretamente (sem necessidade de implantar arquivos WAR)
+* Incorpore Tomcat, Jetty ou Undertow diretamente (sem necessidade de implantar arquivos WAR)
 
-Forneça dependências 'starter' opinativas para simplificar sua configuração de compilação
+* Forneça dependências 'starter' opinativas para simplificar sua configuração de compilação
 
-Configure automaticamente bibliotecas Spring e de terceiros sempre que possível
+* Configure automaticamente bibliotecas Spring e de terceiros sempre que possível
 
-Forneça recursos prontos para produção, como métricas, verificações de integridade e configuração externa
+* Forneça recursos prontos para produção, como métricas, verificações de integridade e configuração externa
 
-Absolutamente nenhuma geração de código e nenhum requisito para configuração XML
+* Absolutamente nenhuma geração de código e nenhum requisito para configuração XML
 
 ## Começando
 
