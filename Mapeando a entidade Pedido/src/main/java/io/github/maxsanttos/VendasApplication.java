@@ -38,13 +38,11 @@ public class VendasApplication {
 //            System.out.println(cliente.getPedidos());
 
             pedidos.findByCliente(fulano).forEach(System.out::println);
-
-
-
         };
     }
 
     public static void main(String[] args) {
+
         SpringApplication.run(VendasApplication.class, args);
     }
 }
