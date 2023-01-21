@@ -1,5 +1,6 @@
 # Java_SpringBoot
-learning SpringBot java
+
+## learning SpringBot java
 
 O Spring Boot facilita a criação de aplicativos autônomos baseados em Spring de nível de produção que você pode "simplesmente executar".
 
@@ -7,7 +8,8 @@ Temos uma visão opinativa da plataforma Spring e das bibliotecas de terceiros p
 
 Se você estiver procurando informações sobre uma versão específica ou instruções sobre como atualizar de uma versão anterior, confira a seção de notas de versão do projeto em nosso wiki.
 
-Recursos
+## Recursos
+
 Crie aplicativos Spring independentes
 
 Incorpore Tomcat, Jetty ou Undertow diretamente (sem necessidade de implantar arquivos WAR)
@@ -20,28 +22,30 @@ Forneça recursos prontos para produção, como métricas, verificações de int
 
 Absolutamente nenhuma geração de código e nenhum requisito para configuração XML
 
-Começando
-Super rápido — experimente o Guia de início rápido .
+## Começando
 
-Mais geral — tente Construir um aplicativo com Spring Boot
+* Super rápido — experimente o Guia de início rápido .
 
-Mais específico — tente Construir um serviço da Web RESTful .
+* Mais geral — tente Construir um aplicativo com Spring Boot
 
-Ou pesquise todos os nossos guias na página inicial dos Guias .
+* Mais específico — tente Construir um serviço da Web RESTful .
 
-Palestras e vídeos
-É uma espécie de mágica: sob as capas do Spring Boot
+* Ou pesquise todos os nossos guias na página inicial dos Guias .
 
-O que há de novo no Spring Boot 2.0
+## Palestras e vídeos
 
-Apresentando o webinar Spring Boot 2.0
+* É uma espécie de mágica: sob as capas do Spring Boot
 
-Desenvolvimento Orientado a Testes com Spring Boot
+* O que há de novo no Spring Boot 2.0
 
-De zero a herói com Spring Boot 2.0
+* Apresentando o webinar Spring Boot 2.0
 
-Você também pode participar da comunidade Spring Boot no Gitter !
+* Desenvolvimento Orientado a Testes com Spring Boot
 
-link da documentaçao:<https://spring.io/projects/spring-boot>
+* De zero a herói com Spring Boot 2.0
+
+* Você também pode participar da comunidade Spring Boot no Gitter !
+
+### link da documentaçao:<https://spring.io/projects/spring-boot>
 
 
