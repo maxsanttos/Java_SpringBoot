@@ -1,7 +1,8 @@
-package io.github.dougllasfps.domain.repository;
+package io.github.maxsanttos.domain.repository;
 
-import io.github.dougllasfps.domain.entity.Cliente;
-import io.github.dougllasfps.domain.entity.Pedido;
+
+import io.github.maxsanttos.domain.entity.Cliente;
+import io.github.maxsanttos.domain.entity.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

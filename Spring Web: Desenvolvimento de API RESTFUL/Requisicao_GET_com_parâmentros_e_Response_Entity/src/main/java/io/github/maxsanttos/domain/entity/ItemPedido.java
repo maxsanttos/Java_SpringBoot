@@ -1,4 +1,4 @@
-package io.github.dougllasfps.domain.entity;
+package io.github.maxsanttos.domain.entity;
 
 import javax.persistence.*;
 
