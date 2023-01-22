@@ -5,33 +5,30 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
-@Table(name = "pedido")
 public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-    @Column(name = "data_pedido")
-    private LocalDate datePedido;
 
-    @Column(name = "total",precision = 20,scale = 2)
+    @Column(name = "data_pedido")
+    private LocalDate dataPedido;
+
+    @Column(name = "total", precision = 20, scale = 2)
     private BigDecimal total;
 
     @OneToMany(mappedBy = "pedido")
     private List<ItemPedido> itens;
 
-    public Pedido() {
+    public List<ItemPedido> getItens() {
+        return itens;
     }
 
-    public Pedido(Integer id, LocalDate datePedido, BigDecimal total) {
-        this.id = id;
-        this.datePedido = datePedido;
-        this.total = total;
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
     }
 
     public Integer getId() {
@@ -49,12 +46,13 @@ public class Pedido {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    public LocalDate getDatePedido() {
-        return datePedido;
+
+    public LocalDate getDataPedido() {
+        return dataPedido;
     }
 
-    public void setDatePedido(LocalDate datePedido) {
-        this.datePedido = datePedido;
+    public void setDataPedido(LocalDate dataPedido) {
+        this.dataPedido = dataPedido;
     }
 
     public BigDecimal getTotal() {
@@ -65,19 +63,11 @@ public class Pedido {
         this.total = total;
     }
 
-    public List<ItemPedido> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<ItemPedido> itens) {
-        this.itens = itens;
-    }
-
     @Override
     public String toString() {
         return "Pedido{" +
                 "id=" + id +
-                ", datePedido=" + datePedido +
+                ", dataPedido=" + dataPedido +
                 ", total=" + total +
                 '}';
     }

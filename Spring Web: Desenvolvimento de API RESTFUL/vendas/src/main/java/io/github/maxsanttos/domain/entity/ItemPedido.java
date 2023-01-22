@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "item_pedido")
 public class ItemPedido {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -21,16 +20,6 @@ public class ItemPedido {
 
     @Column
     private Integer quantidade;
-
-    public ItemPedido() {
-    }
-
-    public ItemPedido(Integer id, Pedido pedido, Produto produto, Integer quantidade) {
-        this.id = id;
-        this.pedido = pedido;
-        this.produto = produto;
-        this.quantidade = quantidade;
-    }
 
     public Integer getId() {
         return id;

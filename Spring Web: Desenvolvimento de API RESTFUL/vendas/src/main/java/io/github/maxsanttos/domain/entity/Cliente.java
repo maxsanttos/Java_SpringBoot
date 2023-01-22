@@ -6,7 +6,6 @@ import java.util.Set;
 @Entity
 @Table(name = "cliente")
 public class Cliente {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -14,10 +13,10 @@ public class Cliente {
     @Column(name = "nome",length = 100)
     private String nome;
 
-    @OneToMany(mappedBy = "cliente",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cliente" , fetch = FetchType.LAZY)
     private Set<Pedido> pedidos;
 
-    public Cliente(){}
+    public Cliente() {}
 
     public Cliente(Integer id, String nome) {
         this.id = id;
@@ -51,8 +50,9 @@ public class Cliente {
     @Override
     public String toString() {
         return "Cliente => "
+                + " "
                 + "Id: " + id
-                + "Nome: " + nome
-                + " ";
+                + " "
+                + "Nome: " + nome;
     }
 }

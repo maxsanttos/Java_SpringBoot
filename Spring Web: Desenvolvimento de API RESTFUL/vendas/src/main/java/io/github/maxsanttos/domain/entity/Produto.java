@@ -3,21 +3,20 @@ package io.github.maxsanttos.domain.entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Entity
-@Table()
 public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
 
     @Column(name = "descricao")
     private String descricao;
+
     @Column(name = "preco_unitario")
     private BigDecimal preco;
 
-    public Produto() {
-    }
+    public Produto() {}
 
     public Produto(Integer id, String descricao, BigDecimal preco) {
         this.id = id;
@@ -47,5 +46,14 @@ public class Produto {
 
     public void setPreco(BigDecimal preco) {
         this.preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", descricao='" + descricao + '\'' +
+                ", preco=" + preco +
+                '}';
     }
 }
