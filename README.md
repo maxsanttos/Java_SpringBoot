@@ -22,29 +22,6 @@ Se você estiver procurando informações sobre uma versão específica ou instr
 
 * Absolutamente nenhuma geração de código e nenhum requisito para configuração XML
 
-## Começando
-
-* Super rápido — experimente o Guia de início rápido .
-
-* Mais geral — tente Construir um aplicativo com Spring Boot
-
-* Mais específico — tente Construir um serviço da Web RESTful .
-
-* Ou pesquise todos os nossos guias na página inicial dos Guias .
-
-## Palestras e vídeos
-
-* É uma espécie de mágica: sob as capas do Spring Boot
-
-* O que há de novo no Spring Boot 2.0
-
-* Apresentando o webinar Spring Boot 2.0
-
-* Desenvolvimento Orientado a Testes com Spring Boot
-
-* De zero a herói com Spring Boot 2.0
-
-* Você também pode participar da comunidade Spring Boot no Gitter !
 
 ### link da documentaçao:<https://spring.io/projects/spring-boot>
 
