@@ -1,8 +1,13 @@
 package io.github.maxsanttos.deletando_recurso_no_servidor.rest.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Optional;
 
 import io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity.Cliente;
@@ -62,4 +67,14 @@ public class ClienteController {
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }
     
+    @GetMapping("/api/clientes")
+    @ResponseBody
+    public ResponseEntity find( Cliente filtro){
+        ExampleMatcher matcher = ExampleMatcher.matching()
+        .withIgnoreCase()
+        .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING);
+        Example example = Example.of(filtro,matcher);
+        List<Cliente> lista = clientes.findAll(example);
+        return ResponseEntity.ok(lista);
+    }
 }
