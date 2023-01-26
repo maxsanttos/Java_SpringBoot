@@ -75,8 +75,4 @@ public class ProdutoController {
         Example example = Example.of(filtro,matcher);
         return repository.findAll(example);
     }
-
-
-
-    
 }
