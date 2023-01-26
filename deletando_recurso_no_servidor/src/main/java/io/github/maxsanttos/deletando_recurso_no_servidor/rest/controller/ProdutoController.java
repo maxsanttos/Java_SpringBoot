@@ -8,6 +8,7 @@ import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -60,6 +61,7 @@ public class ProdutoController {
         NOT_FOUND, "Produto não encontrado"));
     }
 
+    @GetMapping("{ID}")
     public Produto getById(@PathVariable Integer id){
         return repository
         .findById(id)
@@ -67,6 +69,7 @@ public class ProdutoController {
         .NOT_FOUND,"Produto não encontrado"));
     }
 
+    @GetMapping("{id}")
     public List<Produto> find(Produto filtro){
         ExampleMatcher matcher = ExampleMatcher
                                 .matching()
