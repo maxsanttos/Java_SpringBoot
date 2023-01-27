@@ -10,8 +10,7 @@ import io.github.maxsanttos.deletando_recurso_no_servidor.service.PedidoService;
 public class PedidoController {
     private PedidoService service;
 
-
-    public PedidoController(PedidoService service) {
+    public PedidoController(PedidoService service){
         this.service = service;
     }
 }
