@@ -1,5 +1,6 @@
 package io.github.maxsanttos.deletando_recurso_no_servidor;
 
+import io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
