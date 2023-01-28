@@ -1,9 +1,8 @@
 package io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -32,5 +31,4 @@ public class Pedido {
 
     @OneToMany(mappedBy = "pedido")
     private List<ItemPedido> itens;
-
 }
