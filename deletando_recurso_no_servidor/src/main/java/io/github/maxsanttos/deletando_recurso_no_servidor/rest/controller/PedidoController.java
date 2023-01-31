@@ -1,7 +1,9 @@
 package io.github.maxsanttos.deletando_recurso_no_servidor.rest.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity.Pedido;
+import io.github.maxsanttos.deletando_recurso_no_servidor.rest.dto.PedidoDTO;
+import static org.springframework.http.HttpStatus.*;
+import org.springframework.web.bind.annotation.*;
 
 import io.github.maxsanttos.deletando_recurso_no_servidor.service.PedidoService;
 
@@ -15,7 +17,10 @@ public class PedidoController {
         this.service = service;
     }
 
-    public void au(){
-        
+    @PostMapping
+    @ResponseStatus(CREATED)
+    public Integer save(@RequestBody PedidoDTO dto){
+        Pedido pedido = service.salvar(dto);
+        return pedido.getId();
     }
 }
