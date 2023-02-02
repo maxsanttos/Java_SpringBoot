@@ -5,13 +5,14 @@ import io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity.Cliente;
 import io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity.ItemPedido;
 import io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity.Pedido;
 import io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity.Produto;
+import io.github.maxsanttos.deletando_recurso_no_servidor.domain.enums.StatusPedido;
 import io.github.maxsanttos.deletando_recurso_no_servidor.domain.repository.Clientes;
 import io.github.maxsanttos.deletando_recurso_no_servidor.domain.repository.ItemsPedido;
 import io.github.maxsanttos.deletando_recurso_no_servidor.domain.repository.Produtos;
+import io.github.maxsanttos.deletando_recurso_no_servidor.exception.PedidoNaoEncontradoException;
 import io.github.maxsanttos.deletando_recurso_no_servidor.exception.RegraNegocioException;
 import io.github.maxsanttos.deletando_recurso_no_servidor.rest.dto.ItemPedidoDTO;
 import io.github.maxsanttos.deletando_recurso_no_servidor.rest.dto.PedidoDTO;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +46,7 @@ public class PedidoServiceImpl implements PedidoService{
         pedido.setTotal(dto.getTotal());
         pedido.setDataPedido(LocalDate.now());
         pedido.setCliente(cliente);
+        pedido.setStatus(StatusPedido.REALIZADO);
         List<ItemPedido> itemsPedido = converterItems(pedido,dto.getItems());
         repository.save(pedido);
         itemsPedidoRepository.saveAll(itemsPedido);
@@ -57,7 +59,18 @@ public class PedidoServiceImpl implements PedidoService{
         return repository.findByIdFetchItens(id);
     }
 
-    private  List<ItemPedido> converterItems(Pedido pedido,List<ItemPedidoDTO> items){
+    @Override
+    @Transactional
+    public void atualizaStatus(Integer id, StatusPedido statusPedido) {
+        repository
+                .findById(id)
+                .map( pedido -> {
+                    pedido.setStatus(statusPedido);
+                    return repository.save(pedido);
+                }).orElseThrow(PedidoNaoEncontradoException::new);
+    }
+
+    private List<ItemPedido> converterItems(Pedido pedido,List<ItemPedidoDTO> items){
         if (items.isEmpty()){
             throw  new RegraNegocioException("Não é possivel realizar um pedido sem items.");
         }

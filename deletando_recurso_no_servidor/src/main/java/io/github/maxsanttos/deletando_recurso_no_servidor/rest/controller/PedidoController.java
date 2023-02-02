@@ -2,6 +2,8 @@ package io.github.maxsanttos.deletando_recurso_no_servidor.rest.controller;
 
 import io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity.ItemPedido;
 import io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity.Pedido;
+import io.github.maxsanttos.deletando_recurso_no_servidor.domain.enums.StatusPedido;
+import io.github.maxsanttos.deletando_recurso_no_servidor.rest.dto.AtualizacaoStatusPedidoDTO;
 import io.github.maxsanttos.deletando_recurso_no_servidor.rest.dto.InformacoesItemPedidoDTO;
 import io.github.maxsanttos.deletando_recurso_no_servidor.rest.dto.InformacoesPedidoDTO;
 import io.github.maxsanttos.deletando_recurso_no_servidor.rest.dto.PedidoDTO;
@@ -25,6 +27,7 @@ public class PedidoController {
     private PedidoService service;
 
     public PedidoController(PedidoService service){
+
         this.service = service;
     }
 
@@ -37,17 +40,25 @@ public class PedidoController {
 
     @GetMapping("{id}")
     public InformacoesPedidoDTO getById(@PathVariable Integer id){
-        return service.obterPedidoCompleto(id)
-                .map(p -> converter(p))
-                .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Pedido não encontrado"));
+        return service
+                .obterPedidoCompleto(id)
+                .map(this::converter)
+                .orElseThrow(() ->
+                        new ResponseStatusException(NOT_FOUND, "Pedido não encontrado."));
+    }
+    @PatchMapping("{id}")
+    @ResponseStatus(NO_CONTENT)
+    public void updateStatus(@PathVariable Integer id ,
+                             @RequestBody AtualizacaoStatusPedidoDTO dto){
+        String novoStatus = dto.getNovoStatus();
+        service.atualizaStatus(id, StatusPedido.valueOf(novoStatus));
     }
 
     private InformacoesPedidoDTO converter(Pedido pedido){
         return InformacoesPedidoDTO
                 .builder()
                 .codigo(pedido.getId())
-                .dataPedido(pedido.getDataPedido()
-                        .format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+                .dataPedido(pedido.getDataPedido().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
                 .cpf(pedido.getCliente().getCpf())
                 .nomeCliente(pedido.getCliente().getNome())
                 .total(pedido.getTotal())

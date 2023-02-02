@@ -1,5 +1,6 @@
 package io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity;
 
+import io.github.maxsanttos.deletando_recurso_no_servidor.domain.enums.StatusPedido;
 import jakarta.persistence.*;
 
 import lombok.*;
@@ -32,4 +33,6 @@ public class Pedido {
     @OneToMany(mappedBy = "pedido")
     private List<ItemPedido> itens;
 
+    public void setStatus(StatusPedido statusPedido) {
+    }
 }
