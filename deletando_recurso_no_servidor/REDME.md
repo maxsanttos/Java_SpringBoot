@@ -74,3 +74,4 @@ Pedido:
 ## Business Rules
 
 - Só é possivel a criação do pedido caso o id do cliente exista e o id do produto também.
+- Pedido só pode ser criar com o Status
