@@ -47,6 +47,7 @@ public class PedidoServiceImpl implements PedidoService{
         pedido.setDataPedido(LocalDate.now());
         pedido.setCliente(cliente);
         pedido.setStatus(StatusPedido.REALIZADO);
+
         List<ItemPedido> itemsPedido = converterItems(pedido,dto.getItems());
         repository.save(pedido);
         itemsPedidoRepository.saveAll(itemsPedido);
@@ -67,7 +68,7 @@ public class PedidoServiceImpl implements PedidoService{
                 .map( pedido -> {
                     pedido.setStatus(statusPedido);
                     return repository.save(pedido);
-                }).orElseThrow(PedidoNaoEncontradoException::new);
+                }).orElseThrow(() -> new PedidoNaoEncontradoException());
     }
 
     private List<ItemPedido> converterItems(Pedido pedido,List<ItemPedidoDTO> items){

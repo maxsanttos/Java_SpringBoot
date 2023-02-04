@@ -10,6 +10,7 @@ import lombok.*;
 @Entity
 @Table(name = "item_pedido")
 public class ItemPedido {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

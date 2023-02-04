@@ -27,7 +27,6 @@ public class PedidoController {
     private PedidoService service;
 
     public PedidoController(PedidoService service){
-
         this.service = service;
     }
 
@@ -42,7 +41,7 @@ public class PedidoController {
     public InformacoesPedidoDTO getById(@PathVariable Integer id){
         return service
                 .obterPedidoCompleto(id)
-                .map(this::converter)
+                .map(p -> converter(p))
                 .orElseThrow(() ->
                         new ResponseStatusException(NOT_FOUND, "Pedido não encontrado."));
     }
@@ -72,7 +71,6 @@ public class PedidoController {
         if (CollectionUtils.isEmpty(itens)){
             return Collections.emptyList();
         }
-
         return itens.stream()
                 .map(item -> InformacoesItemPedidoDTO
                         .builder()
@@ -81,7 +79,5 @@ public class PedidoController {
                         .quantidade(item.getQuantidade())
                         .build()
                 ).collect(Collectors.toList());
-
     }
-
 }

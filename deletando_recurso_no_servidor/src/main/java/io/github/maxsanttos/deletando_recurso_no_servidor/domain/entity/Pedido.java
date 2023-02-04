@@ -15,6 +15,7 @@ import java.util.List;
 @Entity
 @Table(name = "")
 public class Pedido {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -33,9 +34,7 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private StatusPedido status;
+
     @OneToMany(mappedBy = "pedido")
     private List<ItemPedido> itens;
-
-    public void setStatus(StatusPedido statusPedido) {
-    }
 }
