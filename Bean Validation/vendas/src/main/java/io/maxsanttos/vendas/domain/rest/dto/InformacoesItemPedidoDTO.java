@@ -1,5 +1,4 @@
-package io.github.maxsanttos.deletando_recurso_no_servidor.rest.dto;
-
+package io.maxsanttos.vendas.domain.rest.dto;
 import lombok.*;
 import java.math.BigDecimal;
 
