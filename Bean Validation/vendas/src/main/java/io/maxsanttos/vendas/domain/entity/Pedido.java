@@ -1,13 +1,10 @@
-package io.github.maxsanttos.deletando_recurso_no_servidor.domain.entity;
-
-import io.github.maxsanttos.deletando_recurso_no_servidor.domain.enums.StatusPedido;
-import jakarta.persistence.*;
-
-import lombok.*;
-
+package io.maxsanttos.vendas.domain.entity;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import io.maxsanttos.vendas.domain.enums.StatusPedido;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
@@ -15,7 +12,6 @@ import java.util.List;
 @Entity
 @Table(name = "pedido")
 public class Pedido {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -38,3 +34,4 @@ public class Pedido {
     @OneToMany(mappedBy = "pedido")
     private List<ItemPedido> itens;
 }
+
