@@ -3,6 +3,7 @@ package io.maxsanttos.vendas.domain.entity;
 import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
 @Data
@@ -17,6 +18,7 @@ public class Cliente {
     private Integer id;
 
     @Column(name = "nome", length = 100)
+    @NotEmpty(message = "Campo nome é obrigatório.")
     private String nome;
 
     @Column(name = "cpf", length = 11)
