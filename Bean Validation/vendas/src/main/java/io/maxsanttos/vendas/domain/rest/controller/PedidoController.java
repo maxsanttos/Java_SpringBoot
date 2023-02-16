@@ -10,6 +10,7 @@ import io.maxsanttos.vendas.domain.rest.dto.InformacoesItemPedidoDTO;
 import io.maxsanttos.vendas.domain.rest.dto.InformacoesPedidoDTO;
 import io.maxsanttos.vendas.domain.rest.dto.PedidoDTO;
 import io.maxsanttos.vendas.domain.service.PedidoService;
+import jakarta.validation.Valid;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -30,7 +31,7 @@ public class PedidoController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public Integer save(@RequestBody PedidoDTO dto){
+    public Integer save(@RequestBody @Valid PedidoDTO dto){
         Pedido pedido = service.salvar(dto);
         return pedido.getId();
     }
