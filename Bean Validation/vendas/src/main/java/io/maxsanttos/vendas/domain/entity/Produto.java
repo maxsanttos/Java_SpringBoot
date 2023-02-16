@@ -3,6 +3,8 @@ package io.maxsanttos.vendas.domain.entity;
 import java.math.BigDecimal;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 
@@ -18,9 +20,11 @@ public class Produto {
     private Integer id;
 
     @Column(name = "descricao")
+    @NotEmpty(message = "Campo Descrição é Obrigatório.")
     private String descricao;
 
     @Column(name = "preco_unitario")
+    @NotNull
     private BigDecimal preco;
 }
 
