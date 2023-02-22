@@ -3,7 +3,6 @@ package io.maxsanttos.vendas.domain.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
