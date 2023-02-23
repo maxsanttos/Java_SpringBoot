@@ -6,6 +6,7 @@ import java.util.List;
 import io.maxsanttos.vendas.domain.entity.Produto;
 import io.maxsanttos.vendas.domain.repository.Produtos;
 import jakarta.validation.Valid;
+
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.web.bind.annotation.*;

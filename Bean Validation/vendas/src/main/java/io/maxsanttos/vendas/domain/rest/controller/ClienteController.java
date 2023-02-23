@@ -1,5 +1,5 @@
 package io.maxsanttos.vendas.domain.rest.controller;
-import jakarta.validation.Valid;
+
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
@@ -8,6 +8,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import io.maxsanttos.vendas.domain.entity.Cliente;
 import io.maxsanttos.vendas.domain.repository.Clientes;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/clientes")

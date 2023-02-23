@@ -1,11 +1,13 @@
 package io.maxsanttos.vendas.domain.entity;
 
 import java.util.Set;
+
+import org.hibernate.validator.constraints.br.CPF;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
-import org.hibernate.validator.constraints.br.CPF;
 
 @Data
 @AllArgsConstructor
