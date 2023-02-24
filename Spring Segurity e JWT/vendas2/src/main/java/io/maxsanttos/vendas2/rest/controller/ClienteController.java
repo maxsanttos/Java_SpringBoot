@@ -1,4 +1,4 @@
-package io.maxsanttos.vendas2.domain.rest.controller;
+package io.maxsanttos.vendas2.rest.controller;
 
 
 import org.springframework.data.domain.Example;

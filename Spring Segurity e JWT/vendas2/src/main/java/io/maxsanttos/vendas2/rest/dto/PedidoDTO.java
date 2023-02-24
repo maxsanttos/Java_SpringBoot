@@ -1,4 +1,4 @@
-package io.maxsanttos.vendas2.domain.rest.dto;
+package io.maxsanttos.vendas2.rest.dto;
 import java.math.BigDecimal;
 import java.util.List;
 

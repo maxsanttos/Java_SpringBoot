@@ -1,4 +1,4 @@
-package io.maxsanttos.vendas2.domain.rest;
+package io.maxsanttos.vendas2.rest;
 
 import lombok.Getter;
 import java.util.*;

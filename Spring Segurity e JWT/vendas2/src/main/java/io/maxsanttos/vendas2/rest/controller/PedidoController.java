@@ -1,14 +1,14 @@
-package io.maxsanttos.vendas2.domain.rest.controller;
+package io.maxsanttos.vendas2.rest.controller;
 import static org.springframework.http.HttpStatus.*;
 
 import io.maxsanttos.vendas2.domain.entity.ItemPedido;
 import io.maxsanttos.vendas2.domain.entity.Pedido;
 import io.maxsanttos.vendas2.domain.enums.StatusPedido;
-import io.maxsanttos.vendas2.domain.rest.dto.AtualizacaoStatusPedidoDTO;
-import io.maxsanttos.vendas2.domain.rest.dto.InformacaoItemPedidoDTO;
-import io.maxsanttos.vendas2.domain.rest.dto.InformacoesPedidoDTO;
-import io.maxsanttos.vendas2.domain.rest.dto.PedidoDTO;
 import io.maxsanttos.vendas2.domain.service.PedidoService;
+import io.maxsanttos.vendas2.rest.dto.AtualizacaoStatusPedidoDTO;
+import io.maxsanttos.vendas2.rest.dto.InformacaoItemPedidoDTO;
+import io.maxsanttos.vendas2.rest.dto.InformacoesPedidoDTO;
+import io.maxsanttos.vendas2.rest.dto.PedidoDTO;
 import jakarta.validation.Valid;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;

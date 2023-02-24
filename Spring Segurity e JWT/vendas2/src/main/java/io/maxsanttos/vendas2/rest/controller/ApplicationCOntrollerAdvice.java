@@ -1,10 +1,10 @@
-package io.maxsanttos.vendas2.domain.rest.controller;
+package io.maxsanttos.vendas2.rest.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import io.maxsanttos.vendas2.exception.PedidoNaoEncontradoException;
 import io.maxsanttos.vendas2.exception.RegraNegocioException;
-import io.maxsanttos.vendas2.domain.rest.ApiErros;
+import io.maxsanttos.vendas2.rest.ApiErros;
 
 import java.util.List;
 import java.util.stream.Collectors;
