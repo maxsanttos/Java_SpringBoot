@@ -5,7 +5,7 @@ import io.maxsanttos.vendas2.domain.entity.ItemPedido;
 import io.maxsanttos.vendas2.domain.entity.Pedido;
 import io.maxsanttos.vendas2.domain.enums.StatusPedido;
 import io.maxsanttos.vendas2.domain.rest.dto.AtualizacaoStatusPedidoDTO;
-import io.maxsanttos.vendas2.domain.rest.dto.InformacoesItemPedidoDTO;
+import io.maxsanttos.vendas2.domain.rest.dto.InformacaoItemPedidoDTO;
 import io.maxsanttos.vendas2.domain.rest.dto.InformacoesPedidoDTO;
 import io.maxsanttos.vendas2.domain.rest.dto.PedidoDTO;
 import io.maxsanttos.vendas2.domain.service.PedidoService;
@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/pedidos")
 public class PedidoController {
+    
     private PedidoService service;
 
     public PedidoController(PedidoService service){
@@ -65,17 +66,15 @@ public class PedidoController {
 
     }
 
-    private List<InformacoesItemPedidoDTO> converter(List<ItemPedido> itens){
-        if (CollectionUtils.isEmpty(itens)){
+    private List<InformacaoItemPedidoDTO> converter(List<ItemPedido> itens){
+        if(CollectionUtils.isEmpty(itens)){
             return Collections.emptyList();
         }
-        return itens.stream()
-                .map(item -> InformacoesItemPedidoDTO
-                        .builder()
-                        .descricao(item.getProduto().getDescricao())
-                        .precoUnitario(item.getProduto().getPreco())
-                        .quantidade(item.getQuantidade())
-                        .build()
-                ).collect(Collectors.toList());
+        return itens.stream().map(
+            item -> InformacaoItemPedidoDTO.builder().descricao(item.getProduto().getDescricao())
+            .precoUnitario(item.getProduto().getPreco())
+            .quantidade(item.getQuantidade())
+            .build()
+        ).collect(Collectors.toList());
     }
 }

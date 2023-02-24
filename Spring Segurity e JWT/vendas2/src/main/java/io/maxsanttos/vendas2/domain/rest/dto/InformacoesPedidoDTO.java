@@ -13,5 +13,5 @@ public class InformacoesPedidoDTO {
     private BigDecimal total;
     private String dataPedido;
     private String status;
-    private List<InformacoesItemPedidoDTO> items;
+    private List<InformacaoItemPedidoDTO> items;
 }

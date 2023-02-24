@@ -9,6 +9,7 @@ import io.maxsanttos.vendas2.domain.rest.ApiErros;
 import java.util.List;
 import java.util.stream.Collectors;
 public class ApplicationCOntrollerAdvice {
+    
     @ExceptionHandler(RegraNegocioException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ApiErros handleRegraNegocioException(RegraNegocioException ex){
