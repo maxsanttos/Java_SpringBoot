@@ -26,6 +26,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Service
 public class PedidoServiceImpl implements PedidoService {
+    
     private final Pedidos repository;
     private final Clientes clientesRepositorry;
     private final Produtos produtosRepository;
