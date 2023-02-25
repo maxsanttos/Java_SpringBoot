@@ -10,7 +10,6 @@ import org.springframework.data.domain.ExampleMatcher;
 import java.util.List;
 import io.maxsanttos.vendas2.domain.entity.Produto;
 
-
 @RestController
 @RequestMapping("/api/produtos")
 public class ProdutoController {
@@ -75,5 +74,4 @@ public class ProdutoController {
         Example example = Example.of(filtro, matcher);
         return repository.findAll(example);
     }
-
 }
