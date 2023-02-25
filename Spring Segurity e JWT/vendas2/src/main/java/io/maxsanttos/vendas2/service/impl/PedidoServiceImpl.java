@@ -14,7 +14,6 @@ import io.maxsanttos.vendas2.exception.RegraNegocioException;
 import io.maxsanttos.vendas2.rest.dto.ItemPedidoDTO;
 import io.maxsanttos.vendas2.rest.dto.PedidoDTO;
 import io.maxsanttos.vendas2.service.PedidoService;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +21,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import javax.transaction.Transactional;
 
 @RequiredArgsConstructor
 @Service

@@ -1,9 +1,11 @@
 package io.maxsanttos.vendas2.validation.constraintvalidaton;
 
-import jakarta.validation.ConstraintValidator;
 import io.maxsanttos.vendas2.validation.NotEmptyList;
-import jakarta.validation.ConstraintValidatorContext;
+
 import java.util.List;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 
 public class NotEmptyListValidator implements ConstraintValidator<NotEmptyList, List> {
     

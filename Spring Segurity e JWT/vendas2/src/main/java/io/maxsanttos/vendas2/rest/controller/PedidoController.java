@@ -9,7 +9,7 @@ import io.maxsanttos.vendas2.rest.dto.InformacaoItemPedidoDTO;
 import io.maxsanttos.vendas2.rest.dto.InformacoesPedidoDTO;
 import io.maxsanttos.vendas2.rest.dto.PedidoDTO;
 import io.maxsanttos.vendas2.service.PedidoService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;

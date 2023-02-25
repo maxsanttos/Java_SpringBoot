@@ -2,8 +2,10 @@ package io.maxsanttos.vendas2.rest.dto;
 
 import java.math.BigDecimal;
 import java.util.List;
+
+import javax.validation.constraints.NotNull;
+
 import io.maxsanttos.vendas2.validation.NotEmptyList;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

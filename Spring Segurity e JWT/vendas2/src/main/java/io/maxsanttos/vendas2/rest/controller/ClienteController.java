@@ -9,7 +9,9 @@ import org.springframework.web.server.ResponseStatusException;
 import io.maxsanttos.vendas2.domain.entity.Cliente;
 import io.maxsanttos.vendas2.domain.repository.Clientes;
 import java.util.List;
-import jakarta.validation.Valid;
+
+import javax.validation.Valid;
+
 
 @RestController
 @RequestMapping("/api/clientes")

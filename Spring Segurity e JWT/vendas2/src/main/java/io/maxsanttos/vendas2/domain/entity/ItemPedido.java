@@ -1,6 +1,8 @@
 package io.maxsanttos.vendas2.domain.entity;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
+
 import lombok.*;
 
 @Data

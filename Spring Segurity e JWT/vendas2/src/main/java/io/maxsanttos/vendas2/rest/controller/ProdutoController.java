@@ -4,7 +4,7 @@ import io.maxsanttos.vendas2.domain.repository.Produtos;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import static org.springframework.http.HttpStatus.*;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import java.util.List;

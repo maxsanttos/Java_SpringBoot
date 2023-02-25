@@ -1,11 +1,12 @@
 package io.maxsanttos.vendas2.domain.entity;
 
 import io.maxsanttos.vendas2.domain.enums.StatusPedido;
-import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
