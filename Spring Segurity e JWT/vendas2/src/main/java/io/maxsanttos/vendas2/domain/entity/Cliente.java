@@ -1,7 +1,6 @@
 package io.maxsanttos.vendas2.domain.entity;
 
 import org.hibernate.validator.constraints.br.CPF;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
@@ -21,11 +20,11 @@ public class Cliente {
     private Integer id;
 
     @Column(name = "nome", length = 100)
-    @NotEmpty(message = "Campo CPF é Obrigatório")
+    @NotEmpty(message = "{campo.nome.obrigatorio}")
     private String nome;
 
     @Column(name = "cpf", length = 11)
-    @NotEmpty(message = "Campo CPF é obrigatório.")
+    @NotEmpty(message = "{campo.cpf.obrigatorio}")
     @CPF(message = "Informe um CPF válido.")
     private String cpf;
 

@@ -1,12 +1,15 @@
 package io.maxsanttos.vendas2.rest.dto;
+
 import java.math.BigDecimal;
 import java.util.List;
 import lombok.*;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class InformacoesPedidoDTO {
+
     private Integer codigo;
     private String cpf;
     private String nomeCliente;

@@ -1,6 +1,8 @@
 package io.maxsanttos.vendas2.rest.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor

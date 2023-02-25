@@ -1,11 +1,13 @@
 package io.maxsanttos.vendas2.domain.repository;
+
+import io.maxsanttos.vendas2.domain.entity.Pedido;
+import io.maxsanttos.vendas2.domain.entity.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import java.util.List;
 import java.util.Optional;
-import io.maxsanttos.vendas2.domain.entity.Pedido;
-import io.maxsanttos.vendas2.domain.entity.Cliente;
+
 
 public interface Pedidos extends JpaRepository<Pedido,Integer>{
     List<Pedido> findByCliente(Cliente cliente);
