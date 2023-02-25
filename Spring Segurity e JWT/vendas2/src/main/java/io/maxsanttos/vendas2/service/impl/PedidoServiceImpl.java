@@ -1,4 +1,4 @@
-package io.maxsanttos.vendas2.domain.service.impl;
+package io.maxsanttos.vendas2.service.impl;
 
 import io.maxsanttos.vendas2.domain.entity.Cliente;
 import io.maxsanttos.vendas2.domain.entity.ItemPedido;
@@ -9,11 +9,11 @@ import io.maxsanttos.vendas2.domain.repository.ItemsPedido;
 import io.maxsanttos.vendas2.domain.enums.StatusPedido;
 import io.maxsanttos.vendas2.domain.repository.Clientes;
 import io.maxsanttos.vendas2.domain.repository.Pedidos;
-import io.maxsanttos.vendas2.domain.service.PedidoService;
 import io.maxsanttos.vendas2.exception.PedidoNaoEncontradoException;
 import io.maxsanttos.vendas2.exception.RegraNegocioException;
 import io.maxsanttos.vendas2.rest.dto.ItemPedidoDTO;
 import io.maxsanttos.vendas2.rest.dto.PedidoDTO;
+import io.maxsanttos.vendas2.service.PedidoService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

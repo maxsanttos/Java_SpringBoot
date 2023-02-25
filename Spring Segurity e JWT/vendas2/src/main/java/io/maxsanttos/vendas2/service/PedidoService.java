@@ -1,4 +1,4 @@
-package io.maxsanttos.vendas2.domain.service;
+package io.maxsanttos.vendas2.service;
 
 import io.maxsanttos.vendas2.domain.entity.Pedido;
 import io.maxsanttos.vendas2.domain.enums.StatusPedido;
