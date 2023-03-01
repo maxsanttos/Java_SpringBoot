@@ -31,8 +31,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     //autorização
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
+    protected void configure( HttpSecurity http) throws Exception {
+       http
+            .csrf().disable()
+            .authorizeRequests()
+                .antMatchers("/api/clientes/*")
+                    .authenticated()
+            .and().formLogin();      
     }
 }
  
