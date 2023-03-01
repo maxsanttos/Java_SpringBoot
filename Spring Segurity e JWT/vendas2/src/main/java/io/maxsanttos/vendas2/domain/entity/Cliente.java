@@ -3,7 +3,6 @@ package io.maxsanttos.vendas2.domain.entity;
 import org.hibernate.validator.constraints.br.CPF;
 import lombok.*;
 import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
