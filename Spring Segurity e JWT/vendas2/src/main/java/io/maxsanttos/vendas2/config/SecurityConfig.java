@@ -18,7 +18,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         return new BCryptPasswordEncoder();
     }
 
-
     //autenticação dos usuarios
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
