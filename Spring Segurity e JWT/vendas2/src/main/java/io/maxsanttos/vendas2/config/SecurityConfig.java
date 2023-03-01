@@ -28,14 +28,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         .roles("USER");
     }
 
-    //autorização
+    //Configuração de autorização
     @Override
     protected void configure( HttpSecurity http) throws Exception {
        http
             .csrf().disable()
             .authorizeRequests()
-                .antMatchers("/api/clientes/*")
-                    .hasRole("USERV")
+                .antMatchers("/api/clientes/**")
+                    .hasRole("USER")
+                .antMatchers("/api/produtos/**")
+                    .hasRole("ADMIN")
+                .antMatchers("/api/pedidos/**")
+                    .hasRole("USER")
             .and().formLogin();      
     }
 }
